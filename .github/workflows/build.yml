@@ -97,7 +97,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: bloaty-${{ matrix.arch }}
-          path: build/bloaty/bloaty.exe
+          path: build/bloaty/Release/bloaty.exe
 
       - name: test
         run: |

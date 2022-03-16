@@ -27,7 +27,7 @@ class CU;
 
 class AttrValue {
  public:
-  static AttrValue ParseAttr(const CU& cu, uint8_t form, absl::string_view* data);
+  static AttrValue ParseAttr(const CU& cu, uint16_t form, absl::string_view* data);
 
   AttrValue(const AttrValue &) = default;
   AttrValue &operator=(const AttrValue &) = default;
@@ -45,7 +45,7 @@ class AttrValue {
   // Attempts to coerce to uint, returning nullopt if this is not possible.
   absl::optional<uint64_t> ToUint(const CU& cu) const;
 
-  // REQUIRES: IsUint().
+  // REQUIRES: IsUint() && form() != DW_FORM_implicit_const.
   uint64_t GetUint(const CU& cu) const;
 
   // REQUIRES: IsString().

@@ -9,7 +9,7 @@ on:
 
 jobs:
   windows:
-    runs-on: windows-latest
+    runs-on: windows-2019
 
     strategy:
       fail-fast: false
@@ -54,7 +54,7 @@ jobs:
           cmake --build build/bloaty --config Debug --target check-bloaty
 
   windows-release:
-    runs-on: windows-latest
+    runs-on: windows-2019
 
     strategy:
       fail-fast: false
